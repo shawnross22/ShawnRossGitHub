@@ -104,6 +104,20 @@ namespace RandomTeams
             urls.Add("https://www.mariowiki.com/images/e/e1/MSS_Monty_Mole_Character_Select_Sprite.png");
             urls.Add("https://www.mariowiki.com/images/8/86/MSS_Blooper_Character_Select_Sprite.png");
 
+            List<string> captainurls = new List<string>();
+            captainurls.Add("https://www.mariowiki.com/images/6/66/MarioFireballs-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/b/bf/LuigiKnights-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/1/1e/PeachMonarchs-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/e/ea/DaisyFlowers-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/0/01/YoshiEggs-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/b/b1/BirdoBows-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/c/c5/WarioMuscles-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/2/20/WaluigiSpitballs-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/0/01/DKWilds-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/0/0f/DiddyMonkeys-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/9/9a/BowserMonsters-MSS.png");
+            captainurls.Add("https://www.mariowiki.com/images/0/07/BowserJrRookies-MSS.png");
+
             Dictionary<string, int> slugCharacters = new Dictionary<string, int>();
             slugCharacters.Add("Mario", 1);
             slugCharacters.Add("Luigi", 1);
@@ -261,6 +275,84 @@ namespace RandomTeams
                             homechosenurls.Add(charurl);
                         }
                         
+                        foreach (var captainurl in captainurls)
+                        {
+                            if (captain=="Bowser_Jr")
+                            {
+                                string logourl = "https://www.mariowiki.com/images/0/07/BowserJrRookies-MSS.png";
+                                Uri uri = new Uri(logourl);
+                                BitmapImage picture = new BitmapImage(uri);
+
+                                if (i == 0)
+                                {
+                                    imgAwayLogo.Source = picture;
+                                }
+                                else if (i == 1)
+                                {
+                                    imgHomeLogo.Source = picture;
+                                }
+                            }
+                            else if (captain =="Bowser")
+                            {
+                                string logourl = "https://www.mariowiki.com/images/9/9a/BowserMonsters-MSS.png";
+                                Uri uri = new Uri(logourl);
+                                BitmapImage picture = new BitmapImage(uri);
+
+                                if (i == 0)
+                                {
+                                    imgAwayLogo.Source = picture;
+                                }
+                                else if (i == 1)
+                                {
+                                    imgHomeLogo.Source = picture;
+                                }
+                            }
+                            else if (captain == "Donkey_Kong")
+                            {
+                                string logourl = "https://www.mariowiki.com/images/0/01/DKWilds-MSS.png";
+                                Uri uri = new Uri(logourl);
+                                BitmapImage picture = new BitmapImage(uri);
+
+                                if (i == 0)
+                                {
+                                    imgAwayLogo.Source = picture;
+                                }
+                                else if (i == 1)
+                                {
+                                    imgHomeLogo.Source = picture;
+                                }
+                            }
+                            else if (captain == "Diddy_Kong")
+                            {
+                                string logourl = "https://www.mariowiki.com/images/0/0f/DiddyMonkeys-MSS.png";
+                                Uri uri = new Uri(logourl);
+                                BitmapImage picture = new BitmapImage(uri);
+
+                                if (i == 0)
+                                {
+                                    imgAwayLogo.Source = picture;
+                                }
+                                else if (i == 1)
+                                {
+                                    imgHomeLogo.Source = picture;
+                                }
+                            }
+                            else if (captainurl.Contains(captain))
+                            {
+                                string logourl = captainurl;
+                                Uri uri = new Uri(logourl);
+                                BitmapImage picture = new BitmapImage(uri);
+
+                                if (i == 0)
+                                {
+                                    imgAwayLogo.Source = picture;
+                                }
+                                else if (i == 1)
+                                {
+                                    imgHomeLogo.Source = picture;
+                                }
+                            }
+                        }
                         
                     }
                     if (captain == "Yoshi")
@@ -649,6 +741,40 @@ namespace RandomTeams
 
                 hometeamimages[i].Source = picture;
                 homechosenurls.Remove(url);
+            }
+            List<string> positions = new List<string>();
+            positions.Add("P");
+            positions.Add("C");
+            positions.Add("1B");
+            positions.Add("2B");
+            positions.Add("3B");
+            positions.Add("SS");
+            positions.Add("LF");
+            positions.Add("CF");
+            positions.Add("RF");
+
+            Label[] awaypositions = new Label[] { lblAway1, lblAway2, lblAway3, lblAway4, lblAway5, lblAway6, lblAway7, lblAway8, lblAway9 };
+            Label[] homepositions = new Label[] { lblHome1, lblHome2, lblHome3, lblHome4, lblHome5, lblHome6, lblHome7, lblHome8, lblHome9 };
+            for (int i = 0; i < 9; i++)
+            {
+                int index = random.Next(positions.Count);
+                awaypositions[i].Content = positions.ElementAt(index);
+                positions.Remove(positions.ElementAt(index));
+            }
+            positions.Add("P");
+            positions.Add("C");
+            positions.Add("1B");
+            positions.Add("2B");
+            positions.Add("3B");
+            positions.Add("SS");
+            positions.Add("LF");
+            positions.Add("CF");
+            positions.Add("RF");
+            for (int i = 0; i < 9; i++)
+            {
+                int index = random.Next(positions.Count);
+                homepositions[i].Content = positions.ElementAt(index);
+                positions.Remove(positions.ElementAt(index));
             }
         }
     }

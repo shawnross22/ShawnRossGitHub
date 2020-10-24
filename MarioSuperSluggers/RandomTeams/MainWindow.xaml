@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="btnRandomTeams" Content="Randomize Teams" HorizontalAlignment="Left" Height="59" Margin="287,352,0,0" VerticalAlignment="Top" Width="197" FontSize="18" Click="btnRandomTeams_Click"/>
-        <Label Content="Away Team" HorizontalAlignment="Left" Height="25" Margin="33,10,0,0" VerticalAlignment="Top" Width="103"/>
-        <Label Content="Home Team" HorizontalAlignment="Left" Height="25" Margin="33,176,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Content="Team 1" HorizontalAlignment="Left" Height="25" Margin="33,10,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label Content="Team 2" HorizontalAlignment="Left" Height="25" Margin="33,176,0,0" VerticalAlignment="Top" Width="103"/>
         <Image HorizontalAlignment="Left" Height="81" Margin="10,35,0,0" VerticalAlignment="Top" Width="146"/>
         <Image x:Name="imgAwayLogo" Margin="0,40,647.333,304.667"/>
         <Image HorizontalAlignment="Left" Height="76" Margin="150,40,0,0" VerticalAlignment="Top" Width="69"/>
@@ -50,7 +50,6 @@
         <Label x:Name="lblHome5" Content="" HorizontalAlignment="Left" Height="33" Margin="469,287,0,0" VerticalAlignment="Top" Width="33" FontSize="15" RenderTransformOrigin="2.937,0.54"/>
         <Label x:Name="lblHome4" Content="" HorizontalAlignment="Left" Height="33" Margin="399,287,0,0" VerticalAlignment="Top" Width="33" FontSize="15" RenderTransformOrigin="2.937,0.54"/>
         <Label x:Name="lblHome3" Content="" HorizontalAlignment="Left" Height="33" Margin="329,287,0,0" VerticalAlignment="Top" Width="33" FontSize="15" RenderTransformOrigin="2.937,0.54"/>
-        <Image x:Name="imgParatroopa" HorizontalAlignment="Left" Height="91" Margin="54,320,0,0" VerticalAlignment="Top" Width="102"/>
 
 
     </Grid>
