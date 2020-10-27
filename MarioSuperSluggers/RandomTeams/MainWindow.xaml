@@ -13,25 +13,25 @@
         <Image HorizontalAlignment="Left" Height="81" Margin="10,35,0,0" VerticalAlignment="Top" Width="146"/>
         <Image x:Name="imgAwayLogo" Margin="0,40,647.333,304.667"/>
         <Image HorizontalAlignment="Left" Height="76" Margin="150,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway1" HorizontalAlignment="Left" Height="76" Margin="152,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway2" HorizontalAlignment="Left" Height="76" Margin="222,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway3" HorizontalAlignment="Left" Height="76" Margin="292,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway4" HorizontalAlignment="Left" Height="76" Margin="362,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway5" HorizontalAlignment="Left" Height="76" Margin="432,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway6" HorizontalAlignment="Left" Height="76" Margin="502,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway7" HorizontalAlignment="Left" Height="76" Margin="572,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway8" HorizontalAlignment="Left" Height="76" Margin="642,40,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgAway9" HorizontalAlignment="Left" Height="76" Margin="712,40,0,0" VerticalAlignment="Top" Width="69"/>
+        <Image x:Name="imgAway1" Margin="152,40,572.333,304.667"/>
+        <Image x:Name="imgAway2" Margin="222,40,502.333,304.667"/>
+        <Image x:Name="imgAway3" Margin="292,40,432.333,304.667"/>
+        <Image x:Name="imgAway4" Margin="362,40,362.333,304.667"/>
+        <Image x:Name="imgAway5" Margin="432,40,292.333,304.667"/>
+        <Image x:Name="imgAway6" Margin="502,40,222.333,304.667"/>
+        <Image x:Name="imgAway7" Margin="572,40,152.333,304.667"/>
+        <Image x:Name="imgAway8" Margin="642,40,82.333,304.667"/>
+        <Image x:Name="imgAway9" Margin="712,40,12.333,304.667"/>
         <Image x:Name="imgHomeLogo" Margin="2,211,645.333,133.667"/>
-        <Image x:Name="imgHome1" HorizontalAlignment="Left" Height="76" Margin="152,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome2" HorizontalAlignment="Left" Height="76" Margin="222,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome3" HorizontalAlignment="Left" Height="76" Margin="292,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome4" HorizontalAlignment="Left" Height="76" Margin="362,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome5" HorizontalAlignment="Left" Height="76" Margin="432,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome6" HorizontalAlignment="Left" Height="76" Margin="502,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome7" HorizontalAlignment="Left" Height="76" Margin="572,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome8" HorizontalAlignment="Left" Height="76" Margin="642,211,0,0" VerticalAlignment="Top" Width="69"/>
-        <Image x:Name="imgHome9" HorizontalAlignment="Left" Height="76" Margin="712,211,0,0" VerticalAlignment="Top" Width="69"/>
+        <Image x:Name="imgHome1" Margin="152,211,572.333,133.667"/>
+        <Image x:Name="imgHome2" Margin="222,211,502.333,133.667"/>
+        <Image x:Name="imgHome3" Margin="292,211,432.333,133.667"/>
+        <Image x:Name="imgHome4" Margin="362,211,362.333,133.667"/>
+        <Image x:Name="imgHome5" Margin="432,211,292.333,133.667"/>
+        <Image x:Name="imgHome6" Margin="502,211,222.333,133.667"/>
+        <Image x:Name="imgHome7" Margin="572,211,152.333,133.667"/>
+        <Image x:Name="imgHome8" Margin="642,211,82.333,133.667"/>
+        <Image x:Name="imgHome9" Margin="712,211,12.333,133.667"/>
         <Label x:Name="lblAway1" Content="" HorizontalAlignment="Left" Height="33" Margin="189,116,0,0" VerticalAlignment="Top" Width="33" FontSize="15" RenderTransformOrigin="2.937,0.54"/>
         <Label x:Name="lblAway2" Content="" HorizontalAlignment="Left" Height="33" Margin="259,116,0,0" VerticalAlignment="Top" Width="33" FontSize="15" RenderTransformOrigin="2.937,0.54"/>
         <Label x:Name="lblAway9" Content="" HorizontalAlignment="Left" Height="33" Margin="749,116,0,0" VerticalAlignment="Top" Width="33" FontSize="15" RenderTransformOrigin="2.937,0.54"/>
