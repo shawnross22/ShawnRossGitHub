@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BattleStage
 {
-    class StatsCalculation
+    public class StatsCalculation
     {
         public int Level { get; set; }
         public int BaseHP { get; set; }
@@ -41,7 +41,7 @@ namespace BattleStage
             SpecialAttack = 0;
             SpecialDefense = 0;
             Speed = 0;
-            
+
             Nature = "";
         }
 
@@ -92,25 +92,30 @@ namespace BattleStage
             stats.Add("Special Defense");
             stats.Add("Speed");
             int maximum = 0;
+            int E = 0;
+            
 
-            foreach (var stat in stats)
+            for (int i = 0; i < 5; i++)
             {
                 int index = random.Next(stats.Count);
                 string statname = stats.ElementAt(index);
-                int value = random.Next(0, 252);
-                maximum = maximum + value;
-                if (maximum<=510)
+                stats.Remove(statname);
+                int EV = random.Next(0, 252);
+                maximum = maximum + EV;
+                if (maximum <= 510)
                 {
-                    int E = value / 4;
+                    E = EV / 4;
                     EVSpread.Add(statname, E);
                 }
-                else if (maximum>510)
+                else if (maximum > 510)
                 {
-                    int E = 0;
+                    EV = EV-(maximum - 510);
+                    maximum = 510;
+                    E = EV / 4;
                     EVSpread.Add(statname, E);
                 }
-                
             }
+           
             int HPE=0;
             int AttackE=0;
             int DefenseE=0;
@@ -146,24 +151,148 @@ namespace BattleStage
                 
             }
             int[] EVs = new int[] { HPE, AttackE, DefenseE, SpecialAttackE, SpecialDefenseE, SpeedE };
+            
             return EVs;
         }
             
         
 
-        public int CalculateHP()
+        public int[] CalculateStats()
         {
-            StatsCalculation stats = new StatsCalculation();
+            
             Random random = new Random();
-            int iv = random.Next(0, 31);
+            int HPIV = random.Next(0, 31);
             int[] evs = GetEVs();
-            int ev = evs[0];
-            double unroundedHP = (2 * stats.BaseHP + iv + ev) * stats.Level / 100 + stats.Level + 10;
+            int HPEV = evs[0];
+            double unroundedHP = (2 * BaseHP + HPIV + HPEV) * Level / 100 + Level + 10;
             int HP = Convert.ToInt32(Math.Round(unroundedHP, 0));
+            int AttackIV = random.Next(0, 31);
+            int AttackEV = evs[1];
+            double unroundedAttack = (2*BaseAttack + AttackIV + AttackEV)*Level/100+5;
+            int Attack = Convert.ToInt32(Math.Round(unroundedAttack, 0));
+            int DefenseIV = random.Next(0, 31);
+            int DefenseEV = evs[2];
+            double unroundedDefense = (2 * BaseDefense + DefenseIV + DefenseEV) * Level / 100 + 5;
+            int Defense = Convert.ToInt32(Math.Round(unroundedDefense, 0));
+            int SpecialAttackIV = random.Next(0, 31);
+            int SpecialAttackEV = evs[3];
+            double unroundedSpecialAttack = (2 * BaseSpecialAttack + SpecialAttackIV + SpecialAttackEV) * Level / 100 + 5;
+            int SpecialAttack = Convert.ToInt32(Math.Round(unroundedSpecialAttack, 0));
+            int SpecialDefenseIV = random.Next(0, 31);
+            int SpecialDefenseEV = evs[4];
+            double unroundedSpecialDefense = (2 * BaseSpecialDefense + SpecialDefenseIV + SpecialDefenseEV) * Level / 100 + 5;
+            int SpecialDefense = Convert.ToInt32(Math.Round(unroundedSpecialDefense, 0));
+            int SpeedIV = random.Next(0, 31);
+            int SpeedEV = evs[5];
+            double unroundedSpeed = (2 * BaseSpeed + SpeedIV + SpeedEV) * Level / 100 + 5;
+            int Speed = Convert.ToInt32(Math.Round(unroundedSpeed, 0));
 
+            if (Nature=="Lonely")
+            {
+                Attack = Convert.ToInt32(Attack*1.1);
+                Defense = Convert.ToInt32(Defense * 0.9);
+            }
+            else if (Nature == "Brave")
+            {
+                Attack = Convert.ToInt32(Attack * 1.1);
+                Speed = Convert.ToInt32(Speed * 0.9);
+            }
+            else if (Nature == "Adamant")
+            {
+                Attack = Convert.ToInt32(Attack * 1.1);
+                SpecialAttack = Convert.ToInt32(SpecialAttack * 0.9);
+            }
+            else if (Nature == "Naughty")
+            {
+                Attack = Convert.ToInt32(Attack * 1.1);
+                SpecialDefense = Convert.ToInt32(SpecialDefense * 0.9);
+            }
+            else if (Nature == "Bold")
+            {
+                Defense = Convert.ToInt32(Defense * 1.1);
+                Attack = Convert.ToInt32(Attack * 0.9);
+            }
+            else if (Nature == "Relaxed")
+            {
+                Defense = Convert.ToInt32(Defense * 1.1);
+                Speed = Convert.ToInt32(Speed * 0.9);
+            }
+            else if (Nature == "Impish")
+            {
+                Defense = Convert.ToInt32(Defense * 1.1);
+                SpecialAttack = Convert.ToInt32(SpecialAttack * 0.9);
+            }
+            else if (Nature == "Lax")
+            {
+                Defense = Convert.ToInt32(Defense * 1.1);
+                SpecialDefense = Convert.ToInt32(SpecialDefense * 0.9);
+            }
+            else if (Nature == "Timid")
+            {
+                Speed = Convert.ToInt32(Speed * 1.1);
+                Attack = Convert.ToInt32(Attack * 0.9);
+            }
+            else if (Nature == "Hasty")
+            {
+                Speed = Convert.ToInt32(Speed * 1.1);
+                Defense = Convert.ToInt32(Defense * 0.9);
+            }
+            else if (Nature == "Jolly")
+            {
+                Speed = Convert.ToInt32(Speed * 1.1);
+                SpecialAttack = Convert.ToInt32(SpecialAttack * 0.9);
+            }
+            else if (Nature == "Naive")
+            {
+                Speed = Convert.ToInt32(Speed * 1.1);
+                SpecialDefense = Convert.ToInt32(SpecialDefense* 0.9);
+            }
+            else if (Nature == "Modest")
+            {
+                SpecialAttack = Convert.ToInt32(SpecialAttack * 1.1);
+                Attack = Convert.ToInt32(Attack * 0.9);
+            }
+            else if (Nature == "Mild")
+            {
+                SpecialAttack = Convert.ToInt32(Defense * 1.1);
+                Defense = Convert.ToInt32(Defense * 0.9);
+            }
+            else if (Nature == "Quiet")
+            {
+                SpecialAttack = Convert.ToInt32(SpecialAttack * 1.1);
+                Speed = Convert.ToInt32(Speed * 0.9);
+            }
+            else if (Nature == "Rash")
+            {
+                SpecialAttack = Convert.ToInt32(SpecialAttack * 1.1);
+                SpecialDefense = Convert.ToInt32(SpecialDefense * 0.9);
+            }
+            else if (Nature == "Calm")
+            {
+                SpecialDefense = Convert.ToInt32(SpecialDefense * 1.1);
+                Attack = Convert.ToInt32(Attack * 0.9);
+            }
+            else if (Nature == "Gentle")
+            {
+                SpecialDefense = Convert.ToInt32(SpecialDefense * 1.1);
+                Defense = Convert.ToInt32(Defense * 0.9);
+            }
+            else if (Nature == "Sassy")
+            {
+                SpecialDefense = Convert.ToInt32(SpecialDefense * 1.1);
+                Speed = Convert.ToInt32(Speed * 0.9);
+            }
+            else if (Nature == "Careful")
+            {
+                SpecialDefense = Convert.ToInt32(SpecialDefense * 1.1);
+                SpecialAttack = Convert.ToInt32(SpecialAttack * 0.9);
+            }
 
-            return HP;
+            int[] Stats = { HP, Attack, Defense, SpecialAttack, SpecialDefense, Speed };
+            return Stats;
         }
+        
+            
     }
 
 }

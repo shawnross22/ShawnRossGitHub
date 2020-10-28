@@ -15,7 +15,7 @@
         <TextBox x:Name="txtPlayerPokemon" HorizontalAlignment="Left" Height="75" Margin="457,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" FontSize="22"/>
         <Image x:Name="imgOpponentPokemon" HorizontalAlignment="Left" Height="187" Margin="508,39,0,0" VerticalAlignment="Top" Width="205"/>
         <Button x:Name="btnFight" HorizontalAlignment="Left" Height="42.5" Margin="396,326,0,0" VerticalAlignment="Top" Width="200" Content="Fight" FontSize="20"/>
-        <Button x:Name="btnPokemon" HorizontalAlignment="Left" Height="42.5" Margin="396,368,0,0" VerticalAlignment="Top" Width="200" Content="Pokemon" FontSize="20"/>
+        <Button x:Name="btnPokemon" HorizontalAlignment="Left" Height="42.5" Margin="396,368,0,0" VerticalAlignment="Top" Width="200" Content="Pokemon" FontSize="20" Click="btnPokemon_Click"/>
         <Button x:Name="btnBag" HorizontalAlignment="Left" Height="42" Margin="594,327,-0.667,0" VerticalAlignment="Top" Width="200" FontSize="20" Content="Bag"/>
         <Button x:Name="btnRun" HorizontalAlignment="Left" Height="42" Margin="594,368,-0.667,0" VerticalAlignment="Top" Width="200" FontSize="20" Content="Run"/>
         <Rectangle x:Name="rectPlayerHP" Fill="#FF029D30" HorizontalAlignment="Left" Height="19" Margin="497,279,0,0" Stroke="Black" VerticalAlignment="Top" Width="200"/>

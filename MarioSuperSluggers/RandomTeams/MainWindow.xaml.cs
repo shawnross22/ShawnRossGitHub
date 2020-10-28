@@ -361,7 +361,7 @@ namespace RandomTeams
                         slugCharacters.Remove(captain);
                         Captains.Remove(captain);
                     }
-                    
+                    else
                     {
                         slugCharacters.Remove(captain);
                         Captains.Remove(captain);
